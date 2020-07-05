@@ -1,0 +1,181 @@
+<!-- *************************************************************** 
+-----------------------Navbar----------------------------------
+********************************************************************-->
+<nav class="main-header navbar navbar-expand navbar-white navbar-light" ng-init="get_india_data()">
+  <!-- Left navbar links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+    </li>
+    <!-- Codes by HTMLcodes.ws -->
+    <li class="nav-item d-none d-sm-inline-block1">
+      <a href="/" class="nav-link">Covid 19 All Over World Cases</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block1">
+      <a href="/indiaDashboard" class="nav-link active">India Corona cases</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block1">
+      <a href="/indiaChart" class="nav-link">Chart View of India Cases</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block1">
+      <a href="/indiaState" class="nav-link">See covid-19 Cases in you District</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block1" style="cursor: pointer;">
+      <div class="dropdown">
+        <a class="nav-link" id="dropdownMenuButton" data-toggle="dropdown">FAQs</a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="/FAQsEnglish">FAQs in English</a>
+          <a class="dropdown-item" href="/FAQsHindi">FAQs in Hindi</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>
+<!-- *************************************************************** 
+  -----------------------aside----------------------------------
+********************************************************************-->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <a href="" class="brand-link">
+    <span class="brand-text font-weight-light">Welcome</span>
+  </a>
+  <div class="sidebar">
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item has-treeview menu-open">
+          <a href="#" class="nav-link">
+            <img src="dist/img/4.png">
+            <p>All-Over-World-Cases
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="/" class="nav-link">
+                <p>Dashboard
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/countries" class="nav-link">
+                <p>Countries Table</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item has-treeview menu-open">
+          <a href="#" class="nav-link active">
+            <img src="dist/img/12.png">
+            <p>
+              India-Cases
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="/indiaDashboard" class="nav-link">
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/indiatable" class="nav-link active">
+                <img src="dist/img/13.png">
+                <p>India Table</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/indiaChart" class="nav-link">
+                <p>Graphical View</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/indiaState" class="nav-link">
+                <p>State Table</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item has-treeview menu-open">
+          <a href="#" class="nav-link">
+            <img src="dist/img/FAQ/2.png">
+            <p>FAQs
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="/FAQsEnglish" class="nav-link">
+                <p>FAQs in English</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/FAQsHindi" class="nav-link">
+                <p>FAQs in Hindi</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>
+<!-- *************************************************************** 
+  -----------------------Main Content----------------------------------
+********************************************************************-->
+<div class="content-wrapper">
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-9 col-sm-9 col-md-9">
+          <h1 class="m-0 text-dark"> Data is refresh on <span class="right badge badge-success">{{in_date}}</h1>
+          </div>
+        <div class="col-3 col-sm-3 col-md-3">
+          <ol class="breadcrumb float-sm-right">
+            <li><button type="button" class="btn btn-block btn-outline-info" ng-click="refresh_India_Data()">Refresh
+                Data</button></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">All Country Data</h3>
+            <span class="float-sm-right">search <input type="text" ng-model="ser"></span>
+          </div>
+          <div class="card-body table-responsive">
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>State</th>
+                  <th>TotalConfirmed</th>
+                  <th>TotalDeaths</th>
+                  <th>TotalRecovered</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="(key, val) in india_data.statewise | filter: ser">
+                  <td>{{val.state}}</td>
+                  <td>{{val.confirmed}}</td>
+                  <td>{{val.deaths}}</td>
+                  <td>{{val.recovered}}</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>State</th>
+                  <th>TotalConfirmed</th>
+                  <th>TotalDeaths</th>
+                  <th>TotalRecovered</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

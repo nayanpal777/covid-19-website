@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19 Project</title>
+    
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="dist/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="icon" href="dist/img/9.png">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed" ng-app="angApp"
+    ng-controller="HomeController">
+
+    <div class="wrapper">
+        <div ng-view></div>
+    </div>
+    <!-- REQUIRED SCRIPTS -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <script src="dist/js/adminlte.js"></script>
+    <script src="dist/js/demo.js"></script>
+    <script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+
+    <!--Angularjs Script-->
+    <script src="plugins/libs/angular/angular.min.js"></script>
+    <script src="plugins/libs/angular/ngStorage.min.js"></script>
+    <script src="plugins/libs/angular-route/angular-route.min.js"></script>
+
+    <script src="js/angAppRoute.js"></script>
+    <script src="js/angApp.js"></script>
+    <script src="js/controllers/HomeContr.js"></script>
+    <script src="js/controllers/indiaContr.js"></script>
+    <script src="js/controllers/StateContr.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "covid-19",
+  "authors": [
+    "nayanpal777 <nayanpalmns@gmail.com>"
+  ],
+  "description": "Covid-19 Information",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.8.0",
+    "angular-route": "^1.8.0"
+  }
+}

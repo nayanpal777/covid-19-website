@@ -1,0 +1,1 @@
+angular.module('angApp', ['ngRoute','ngStorage', 'angAppRoutes', 'HomeContr', 'indiaModule', 'stateModule']);
